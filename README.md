@@ -41,3 +41,12 @@ To run the script and test bypassing snort rules:
    python poc-snort-bypass.py
    ```
 ### Lab Configuration
+
+1. Vbox Lab Setup . Attacking Machine : kali linux , Lubuntu running snort , and metasploitable as target machine [**Note: The network settings of all the machines is on host-only mode]
+   ![Lab-Setup](/images/lab_setup.png)
+
+2. During Installation snort asks for the network range which it will monitor .But if its not configured correctly we can edit it later in the conf file by changing the $HOME_NET variable entry
+   ![Snort-Conf](/images/snort_config_home_net.png)
+
+3. And Lastly run Snort in IDS mode and log the alert messages in the console
+   ![snort-ids-mode](/images/snort-conf.png)
