@@ -1,6 +1,6 @@
 # Bypassing Snort Scan Rules
 
-## Overwiew
+## Overview
 
 This project demonstrates methods to bypass Snort scan rules. Snort is an open-source Network Intrusion Detection System (NIDS) capable of performing real-time traffic analysis and packet logging.
 It can also be set as an Intrusion Prevention System (IPS) making it an essential component for network security. Understanding how attackers might bypass Snort's preconfigured detection rules can help
