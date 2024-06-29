@@ -9,7 +9,7 @@ security professionals improve their defenses and can help hardening the default
 ## Table of Contents
 - [Installation](#installation)
 - [Usage](#usage)
-- [Lab Configuration](#labconfig)
+- [Lab Configuration](#labconfiguration)
 - [Disclaimer](#disclaimer)
 
 ## Installation
