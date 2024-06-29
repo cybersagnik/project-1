@@ -50,6 +50,9 @@ To run the script and test bypassing snort rules:
 
 3. And Lastly run Snort in IDS mode and log the alert messages in the console
    ![snort-ids-mode](/images/snort-conf.png)
+   
+5. Configure the python file by changing the target_ip to your metasploitable machine ip as per your vbox host network settings and launch it.
+   ![python-config](/images/python_config.png)
 
 ### Disclaimer
 This project is purely for educational purpose feeding the curiosty of a hacker's mind . Use of this tool for unethical and unlawful activities is not promoted. Thus by using the script you are acknowledging the limitations of cyber-law . Thank You.!!
