@@ -27,7 +27,7 @@ import random
 import time
 
 open_ports=[]
-target= "192.168.56.108"
+target= "192.168.56.108" #Edit it As per your network configuration
 def send_forged_packet():
   top_ten=[21,22,23,25,80,139,80,110,445,143,443,3306,3389]
   for port in top_ten:
@@ -44,6 +44,7 @@ def send_forged_packet():
         pbar.update(1)
         exec_time = end_time - start_time
         time.sleep(exec_time)
+      
 
 def main_func():
   send_forged_packet()
