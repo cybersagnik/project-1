@@ -10,7 +10,7 @@ security professionals improve their defenses and can help hardening the default
 - [Installation](#installation)
 - [Usage](#usage)
 - [Lab Configuration](#lab-configuration)
-- [Disclaimer](#disclaimer)
+- [Resources](#resources)
 
 ## Installation
 
@@ -54,5 +54,8 @@ To run the script and test bypassing snort rules:
 5. Configure the python file by changing the target_ip to your metasploitable machine ip as per your vbox host network settings and launch it.
    ![python-config](/images/python_config.png)
 
-### Disclaimer
-This project is purely for educational purpose feeding the curiosty of a hacker's mind . Use of this tool for unethical and unlawful activities is not promoted. Thus by using the script you are acknowledging the limitations of cyber-law . Thank You.!!
+### Resources
+
+-[Official Snort Documentation and Rule Writing Syntax](https://docs.snort.org/)
+-[Scan Rules of Snort](https://github.com/eldondev/Snort/blob/master/rules/scan.rules)
+
