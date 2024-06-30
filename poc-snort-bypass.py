@@ -1,11 +1,26 @@
 """Author : Sagnik Ray 
    Date: 29/06/2024
    
-   THIS IS THE SIMPLE POC SCRIPT OF BYPASSING SNORT'S PRECONFIGURED SCAN RULES.
-   THE SCAN RULES OF SNORT WERE CREATED IN 2005/05/16. THE RULE SET IS STANDARD AS PER SECURITY NORMS AND KNOWN SCANNING TECHNIQUES.
+   THIS IS THE SIMPLE POC SCRIPT OF BYPASSING SNORT'S PRECONFIGURED SCAN RULES THAT COMES WITH THE FREE VERSION OF SNORT
+   THE RULE SET IS STANDARD AS PER SECURITY NORMS AND KNOWN SCANNING TECHNIQUES.
    IT DETECTS MAJOR SCANNING TECHNIQUES (SYN FIN , XMAS ,NULL SCAN,SYN SCAN) BUT IT FAILS TO DETECT ANY NEW SCANNING TECHNQUE.
    
    THIS POC DEMONSTRATE HOW PRECONFIGURED RULES IN AN IDS OR IPS CAN BE BYPASSED BY INTRODUCING SOME NEW METHODS 
+
+   Github repo to read about the scan.rules : https://github.com/eldondev/Snort/blob/master/rules/scan.rules
+   ##### RULESET OF SNORT THAT IS IMPORTANT FOR THE POC
+      { 
+       alert tcp $EXTERNAL_NET any -> $HOME_NET any (msg:"SCAN FIN"; flow:stateless; flags:F,12; reference:arachnids,27; classtype:attempted-recon; sid:621; rev:7;)
+       # alert tcp $EXTERNAL_NET any -> $HOME_NET any (msg:"SCAN ipEye SYN scan"; flow:stateless; flags:S; seq:1958810375; reference:arachnids,236; classtype:attempted-recon; sid:622; rev:8;)
+       alert tcp $EXTERNAL_NET any -> $HOME_NET any (msg:"SCAN NULL"; flow:stateless; ack:0; flags:0; seq:0; reference:arachnids,4; classtype:attempted-recon; sid:623; rev:6;)
+       alert tcp $EXTERNAL_NET any -> $HOME_NET any (msg:"SCAN SYN FIN"; flow:stateless; flags:SF,12; reference:arachnids,198; classtype:attempted-recon; sid:624; rev:7;)
+       alert tcp $EXTERNAL_NET any -> $HOME_NET any (msg:"SCAN XMAS"; flow:stateless; flags:SRAFPU,12; reference:arachnids,144; classtype:attempted-recon; sid:625; rev:7;)
+       alert tcp $EXTERNAL_NET any -> $HOME_NET any (msg:"SCAN nmap XMAS"; flow:stateless; flags:FPU,12; reference:arachnids,30; classtype:attempted-recon; sid:1228; rev:7;)
+       # alert tcp $EXTERNAL_NET any -> $HOME_NET any (msg:"SCAN synscan portscan"; flow:stateless; flags:SF; id:39426; reference:arachnids,441; classtype:attempted-recon; sid:630; rev:7;) 
+      }
+      AS YOU CAN SEE IT IS ALERTING AGAINST ALL THE STANDARD KNOWN SCANNING TECHNIQUES . IF ANYONE FACES TROUBLE UNDERSTANDING THE RULES DO CHECK THE RESOURCES SECTION TO UNDERSTAND IT IN DETAIL
+  #####
+   
    
    UNDERSTANDING THE TCP FLAGS USED IN THIS POC AND HOW AND WHY THEY WORK IN OUR SCENARIO
    
