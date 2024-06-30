@@ -46,7 +46,6 @@ target= "192.168.56.108" #Edit it As per your network configuration
 def send_forged_packet():
   top_ten=[21,22,23,25,80,139,80,110,445,143,443,3306,3389]
   for port in top_ten:
-      start_time = time.time()
       ip = IP(dst=target)
       tcp = TCP(sport=random.randint(1,65535),dport=port,flags="PU",urgptr=1)
       packet = ip/tcp
@@ -56,9 +55,6 @@ def send_forged_packet():
         continue
       else:
         open_ports.append(port)
-        pbar.update(1)
-        exec_time = end_time - start_time
-        time.sleep(exec_time)
       
 
 def main_func():
