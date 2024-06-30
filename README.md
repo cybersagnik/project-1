@@ -56,6 +56,6 @@ To run the script and test bypassing snort rules:
 
 ### Resources
 
--[Official Snort Documentation and Rule Writing Syntax](https://docs.snort.org/)
--[Scan Rules of Snort](https://github.com/eldondev/Snort/blob/master/rules/scan.rules)
+- [Official Snort Documentation and Rule Writing Syntax](https://docs.snort.org/)
+- [Scan Rules of Snort](https://github.com/eldondev/Snort/blob/master/rules/scan.rules)
 
